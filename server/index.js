@@ -1,7 +1,7 @@
 //index.js
 const express = require('express') //express module 가져오기
 const app = express() // 새로운 express 앱을 express()로 만들기
-const port = 3000 // 포트번호
+const port = 4000 // 포트번호
 
 //config import
 const config = require('./config/key');
@@ -21,6 +21,7 @@ const { User } = require('./models/User');
 
 //import middleware
 const {auth} = require('./middleware/auth');
+const { response } = require('express');
 
 
 //body-parser -> client가 보내는 정보를 서버가 분석해서 가져올 수 있게 해주는 어플리케이션
@@ -35,6 +36,12 @@ app.use(express.urlencoded({extended: true}));
 
 //use cookie Parser
 app.use(cookieParser());
+
+//axios test
+app.get('/api/hello', (req,res)=>{
+    res.send("안녕하세요")
+}) 
+
 
 // route '/'
 app.get('/', (req, res) => res.send('Hello World!'))// root directory('/')에 오면 저거 출력
@@ -125,4 +132,4 @@ app.get('/api/users/logout',auth, (req, res)=>{
 
 
 
-app.listen(port, ()=> console.log('Example app listening on port ${port}!'))
+app.listen(port, ()=> console.log('Example app listening on port ' + port))

@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//import antd framework
+import 'antd/dist/antd.less'; // or 'antd/dist/antd.less'
+
+// //connect redux
+// import { Provider } from "react-redux";
+// import {applyMiddleware, configureStore } from "redux";
+// import promiseMiddleware from 'redux-promise';
+// import ReduxThunk from 'redux-thunk';
+
+// const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(configureStore);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
